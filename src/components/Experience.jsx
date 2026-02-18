@@ -3,63 +3,52 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Award, Cpu, ShieldCheck } from 'lucide-react';
 
 const Experience = ({ experience }) => {
-    return (
-        <section id="experience" className="experience-section">
-            <h2 className="section-title">Qualifications & Expertise</h2>
+  return (
+    <section id="experience" className="experience-section">
+      <h2 className="section-title">Qualifications & Expertise</h2>
 
-            <div className="exp-grid">
-                <div className="skills-column">
-                    <div className="glass-card glass">
-                        <div className="card-header">
-                            <Cpu className="icon" />
-                            <h3>Tech Stack</h3>
-                        </div>
-                        <div className="skill-groups">
-                            <div className="skill-group">
-                                <h4>Languages</h4>
-                                <div className="skill-tags">
-                                    {experience.skills.languages.map(s => <span key={s}>{s}</span>)}
-                                </div>
-                            </div>
-                            <div className="skill-group">
-                                <h4>AI / Frameworks</h4>
-                                <div className="skill-tags">
-                                    {experience.skills.frameworks.map(s => <span key={s}>{s}</span>)}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="timeline-column">
-                    <div className="glass-card glass">
-                        <div className="card-header">
-                            <GraduationCap className="icon" />
-                            <h3>Education</h3>
-                        </div>
-                        {experience.education.map((edu, i) => (
-                            <div key={i} className="timeline-item">
-                                <h4>{edu.institution}</h4>
-                                <p>{edu.degree} • {edu.status}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="glass-card glass" style={{ marginTop: '2rem' }}>
-                        <div className="card-header">
-                            <Award className="icon" />
-                            <h3>Certifications</h3>
-                        </div>
-                        <ul className="cert-list">
-                            {experience.certifications.map((cert, i) => (
-                                <li key={i}>{cert}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+      <div className="exp-grid">
+        <div className="skills-column">
+          <div className="glass-card glass">
+            <div className="card-header">
+              <Cpu className="icon" />
+              <h3>Tech Stack</h3>
             </div>
+            <div className="skill-groups">
+              <div className="skill-group">
+                <h4>Languages</h4>
+                <div className="skill-tags">
+                  {experience.skills.languages.map(s => <span key={s}>{s}</span>)}
+                </div>
+              </div>
+              <div className="skill-group">
+                <h4>AI / Frameworks</h4>
+                <div className="skill-tags">
+                  {experience.skills.frameworks.map(s => <span key={s}>{s}</span>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <style jsx>{`
+        <div className="timeline-column">
+          <div className="glass-card glass">
+            <div className="card-header">
+              <GraduationCap className="icon" />
+              <h3>Education</h3>
+            </div>
+            {experience.education.map((edu, i) => (
+              <div key={i} className="timeline-item">
+                <h4>{edu.institution}</h4>
+                <p>{edu.degree} • {edu.status}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      <style jsx>{`
         .exp-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -138,8 +127,8 @@ const Experience = ({ experience }) => {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Experience;

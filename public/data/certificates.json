@@ -1,0 +1,50 @@
+[
+    {
+        "title": "AI Chatbot Certificate",
+        "file": "/assets/certificates/Alasela Babatunde Ai Chatbot Certificate .pdf",
+        "issuer": "Digital Bootcamp",
+        "category": "AI Development"
+    },
+    {
+        "title": "HTML Certificate",
+        "file": "/assets/certificates/Alasela Babatunde HTML Certificate .pdf",
+        "issuer": "SoloLearn",
+        "category": "Web Development"
+    },
+    {
+        "title": "AI Tutoring Certificate",
+        "file": "/assets/certificates/Alasela Babatunde Ai Tutoring Certificate .pdf",
+        "issuer": "CLCC",
+        "category": "AI Education"
+    },
+    {
+        "title": "Python (GUI & OOP) Certificate",
+        "file": "/assets/certificates/Python Certificate on GUI and OPP.pdf",
+        "issuer": "Coursera",
+        "category": "Programming"
+    },
+    {
+        "title": "Google AI Essentials",
+        "file": "/assets/certificates/Alasela Babatunde Google Ai Essentials Certificate.pdf",
+        "issuer": "Google / Coursera",
+        "category": "AI Fundamentals"
+    },
+    {
+        "title": "Python Programming",
+        "file": "/assets/certificates/Alasela Babatunde Python Certificate .pdf",
+        "issuer": "Digital Bootcamp",
+        "category": "Programming"
+    },
+    {
+        "title": "The LLM Course (Hugging Face)",
+        "file": "/assets/certificates/Certificate of achievement the LLM Course (1).webp",
+        "issuer": "Hugging Face",
+        "category": "LLM / AI"
+    },
+    {
+        "title": "AI Facilitator Certificate",
+        "file": "/assets/certificates/Alasela Babatunde Ai Facilitator Certificate.pdf",
+        "issuer": "Digital Bootcamp",
+        "category": "AI Education"
+    }
+]

@@ -12,7 +12,7 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['About', 'Projects', 'Services', 'Experience', 'Contact'];
+  const navItems = ['About', 'Projects', 'Services', 'Certificates', 'Experience', 'Contact'];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
