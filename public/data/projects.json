@@ -1,0 +1,25 @@
+[
+  {
+    "title": "UBA AI Support",
+    "description": "A production-grade customer support AI system for UBA Bank featuring a RAG pipeline and session-based memory.",
+    "demo": "https://alaselababatunde-uba-ai-support.hf.space/",
+    "tags": [
+      "AI",
+      "RAG",
+      "React",
+      "Banking"
+    ],
+    "icon": "🏦"
+  },
+  {
+    "title": "Tesco AI Support",
+    "description": "Intelligent customer support RAG system for Tesco, optimizing customer interactions with AI-driven responses.",
+    "demo": "https://alaselababatunde-tesco-ai-support.hf.space/",
+    "tags": [
+      "AI",
+      "RAG",
+      "E-commerce"
+    ],
+    "icon": "🏆"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "Alasela Babatunde",
+  "title": "AI Engineer & Founder",
+  "age": 15,
+  "nationality": "Nigerian",
+  "location": "Lagos, Nigeria",
+  "email": "alaselababatunde10@gmail.com",
+  "phone": "09154357208",
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/alasela-babatunde",
+    "github": "https://github.com/alaselababatunde",
+    "twitter": "https://x.com/alasela_babs",
+    "discord": "@alasela_babatunde",
+    "telegram": "@alasela_babatunde",
+    "tiktok": "@alasela_babatunde"
+  },
+  "bio": "AI Engineer and technical innovator with over 5 years of programming experience, starting at age 8. Currently serving as AI Engineer at Cura AI, Co. and Founder of Alash Studios. Specialized in building emotionally intelligent virtual companions for mental health support, AI-powered developer tools, and agricultural optimization systems.",
+  "vision": "Building AI solutions that are ethical, accessible, and impactful — proving that age is just a number when dedication meets innovation.",
+  "achievements": [
+    "Hackathon Winner — Remostart Hackathon (DevAssist Team) — October 2025",
+    "Top 20 Finalist — Nigeria AI Digital Art Competition — 2025",
+    "Tech Titan of Cohort 3.0 — Stellar Academy",
+    "Laptop & Scholarship Award — Boycode 3.0 for Excellence in Tech"
+  ]
+}

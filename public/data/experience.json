@@ -1,0 +1,45 @@
+{
+    "education": [
+        {
+            "institution": "Stars College",
+            "degree": "High School",
+            "status": "Graduating 2026"
+        }
+    ],
+    "certifications": [
+        "The LLM Course (1) — Hugging Face",
+        "Rasa Chatbot Development — Coursera",
+        "Google AI Essentials — Coursera",
+        "Python Intermediate — SoloLearn",
+        "HTML — SoloLearn",
+        "Cybersecurity — Stellar Academy"
+    ],
+    "skills": {
+        "languages": [
+            "Python",
+            "HTML",
+            "C++",
+            "C#"
+        ],
+        "frameworks": [
+            "Flask",
+            "Langchain",
+            "Ollama",
+            "Hugging Face",
+            "OpenAI SDK",
+            "OpenRouter SDK"
+        ],
+        "tools": [
+            "Git",
+            "Docker",
+            "Vercel",
+            "Hugging Face Spaces"
+        ],
+        "domains": [
+            "AI for Mental Health",
+            "AI for Agriculture",
+            "Generative AI",
+            "Web Development"
+        ]
+    }
+}

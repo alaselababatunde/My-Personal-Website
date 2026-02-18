@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Standard Chatbot Solution",
+        "description": "Designed for small companies requiring occasional chatbot functionality with moderate usage patterns.",
+        "initialPrice": "₦1,428,000",
+        "renewalPrice": "₦1,044,000",
+        "features": [
+            "Deployment infrastructure",
+            "Compute resources",
+            "Technical development expertise",
+            "Language and image processing"
+        ]
+    },
+    {
+        "title": "Multi-User Platform",
+        "description": "Tailored for organizations requiring concurrent access across multiple users with active engagement.",
+        "initialPrice": "₦3,502,000",
+        "renewalPrice": "₦2,170,000",
+        "features": [
+            "Robust text and image processing",
+            "Reasoning capabilities",
+            "Simultaneous user sessions",
+            "Architecture design"
+        ]
+    },
+    {
+        "title": "Enterprise Automation & AI Agent",
+        "description": "Engineered for teams requiring advanced automation, system integrations, and AI agent functionality.",
+        "initialPrice": "₦7,826,000",
+        "renewalPrice": "₦5,034,000",
+        "features": [
+            "Process automation",
+            "Advanced memory infrastructure (Pinecone)",
+            "Custom system integrations",
+            "Workflow optimization"
+        ]
+    }
+]
