@@ -1,0 +1,252 @@
+Alasela Babatunde
+AI Engineer & Founder | Hackathon Winner | Building Emotionally Intelligent AI Systems
+
+📞 Phone: 09154357208
+📧 Email: alaselababatunde10@gmail.com
+🔗 LinkedIn: Alasela Babatunde
+💬 Discord: @alasela_babatunde
+🐦 X (Twitter): @alasela_babs
+📲 Telegram: @alasela_babatunde
+🎥 TikTok: @alasela_babatunde
+🌐 Website: https://bit.ly/alaselababatunde
+💻 GitHub: https://github.com/alaselababatunde/Portfolio
+Personal Summary
+BioData:
+
+
+
+
+
+
+
+Name: Alasela Babatunde
+Age: 15
+Role: AI Engineer, Founder (Cura AI & Alash Studios), Educator, Mentor and Programmer
+Nationality: Nigerian
+Education: Stars College (High School), Graduating 2026
+Languages: English
+
+AI Engineer and technical innovator with over 5 years of programming experience, starting at age 8. Currently
+serving as AI Engineer at Cura AI, Co. and Founder of Alash Studios. Proven hackathon winner with
+expertise in Python, HTML, C++, and advanced AI development tools including Flask, Langchain, Ollama,
+Hugging Face, and the OpenAI and OpenRouter SDKs. Specialized in building emotionally intelligent virtual
+companions for mental health support, AI-powered developer tools, and agricultural optimization systems.
+Built A.S.I.A., a functional AI assistant using speech recognition, TTS, and real-time animations. Recognized
+as Top 20 Finalist in national AI competitions. Active tutor, speaker, and project supervisor across youthfocused tech programs. Committed to creating ethical, impactful, and emotionally aware AI solutions.
+
+Professional Summary
+Technically skilled and mission-driven AI Engineer with deep experience in Python development, virtual
+assistant architecture, and real-world AI application. Currently serves as AI Engineer at Cura AI, Co., focused
+on building emotionally intelligent systems for mental health support. Proven track record in competitive
+development environments, including hackathon victories and national-level AI art competitions. Strong
+command of frameworks like Langchain, Flask, and LLM integration pipelines. Expert in Hugging Face
+ecosystem including model fine-tuning, AI agent deployment to Hugging Face servers, and comprehensive
+platform utilization. Proficient in API integration and documentation, enabling seamless system
+interoperability. Experienced in developing AI-powered tools for code debugging, auto-documentation, website
+building, and agricultural optimization. Skilled in mentoring students, simplifying technical concepts, and
+managing tech projects from planning to deployment. Public speaker and youth tech educator with hands-on
+contributions to programs aimed at early-stage learners. Currently developing solutions at the intersection of
+AI, mental health, agriculture, and responsible innovation.
+
+Skills
+Programming Languages & Frameworks
+ Python | HTML | C++ | Flask | Object-Oriented Programming | GUI with Python
+
+AI & Machine Learning
+
+
+
+
+
+OpenAI SDK | OpenRouter SDK | Ollama | Langchain
+Hugging Face (Model Fine-Tuning, Deployment, AI Agents)
+LLM Fine-Tuning for AI Agents Production
+Prompt Engineering | AI Ethics
+
+Technical Specializations
+
+
+
+
+
+
+
+
+
+API Integration | API Documentation
+Virtual Assistant Development
+TTS & STT Synthesis
+Code Debugging AI Systems
+Auto-Documentation Tools
+Website Builder AI Integration
+AI Agent Deployment to Hugging Face Servers
+Model Deployment
+
+Domain Expertise
+ AI for Mental Health
+ AI for Agriculture
+ Generative AI Applications
+
+Leadership & Soft Skills
+
+
+
+
+
+Project Supervision | Team Leadership
+Public Speaking | AI Debating
+Collaboration | Critical Thinking
+Mentoring & Teaching
+
+Experience
+AI Engineer — Cura AI, Co.
+2025 — Present
+
+
+
+
+
+Serving as the AI Engineer for an early-stage startup focused on AI-driven mental health solutions.
+Leading development of emotionally intelligent AI systems and virtual companions.
+Architecting LLM-based applications for therapeutic support and user engagement.
+Implementing Hugging Face models and deploying AI agents to production servers.
+
+Founder — Alash Studios
+2023 — Present
+ Founded and lead a Tech Studio focused on AI innovation and related technologies.
+ Mentored and led small tech teams on project development and problem-solving.
+ Overseeing multiple AI projects from conception to deployment.
+
+AI Engineer — DevAssist Team (Remostart Hackathon Winner)
+October 2025
+ Won hackathon hosted by Remostart as part of DevAssist team.
+ Developed AI-powered programming IDE with integrated chat interface for code debugging and autodocumentation.
+ Built AI system for SME website builder, enabling automated web development with intelligent design
+suggestions.
+ Handled all AI engineering responsibilities for both IDE and website builder products.
+ Implemented natural language processing for code understanding and documentation generation.
+
+AI Engineer — Team Astra (FutureStack GenAI Hackathon)
+2025
+
+
+
+
+
+Competed in FutureStack GenAI Hackathon as AI Engineer for Team Astra.
+Developed AI solution to improve agricultural processes and optimize farmer productivity.
+Implemented machine learning models for crop prediction and resource optimization.
+Received Certificate of Participation for Team Astra.
+
+AI Developer — Tech Disciples AI (Church Project)
+2025
+ Created custom AI assistant for Tech Disciples church community.
+ Integrated AI-powered features to support community engagement and information access.
+ Deployed chatbot system for answering community questions and providing resources.
+
+Top 20 Finalist — Nigeria AI Digital Art Competition
+2025
+ Competed in national AI digital art competition hosted by Deakon College, Unistep, Goajo Team, and
+sponsors.
+
+ Advanced to Top 20 finalists out of national participant pool.
+ Created innovative AI-generated digital artwork showcasing creative AI applications.
+
+Project Supervisor — Luca Ador
+August 2024 — December 2024
+ Oversaw multiple technology projects, ensuring timely completion and team coordination.
+ Managed project timelines, resource allocation, and deliverable quality.
+ Facilitated communication between technical teams and stakeholders.
+
+Python Tutor and AI Speaker — Various Organizations
+2024
+ Taught Python programming basics and intermediate concepts at Digital Bootcamp and American
+Corner Ikeja.
+ Delivered keynote Python programming workshop at Newton Academy, training over 100 students.
+ Created curriculum and teaching materials for beginner and intermediate learners.
+ Conducted hands-on coding sessions and provided one-on-one mentorship.
+
+Developer — A.S.I.A (Virtual Assistant Project)
+2023 — 2024
+ Built a Python-based AI assistant using Speech Recognition, Text-to-Speech engines, and basic
+animations with PyGame.
+ Implemented voice command processing and natural language understanding.
+ Created visual feedback system with real-time animations for user interactions.
+
+Education
+Online Learning Platforms
+ EdX: Python Programming (Beginner), AI With Python
+ YouTube: Ollama, Langchain, Render, AI Agents Development, Deployment
+ Coursera: GUI with Python, Generative AI, Problem Solving, Collaboration, AI for Everyone, AI
+Ethics, Object-Oriented Programming, Prompt Engineering
+ Udemy: AIML Programming
+ Stellar Academy: Cybersecurity
+ SoloLearn: Python Intermediate, HTML Intermediate, C++
+ ZionLight: HTML
+
+Formal Education
+ Stars College (High School) — Graduating 2026
+
+Certifications
+ Certificate of Participation — Team Astra (FutureStack GenAI Hackathon)
+ Certificate of Achievement: The LLM Course (1) — Hugging Face
+
+
+
+
+
+
+
+
+Rasa Chatbot Development — Coursera
+Google AI Essentials — Coursera
+Appreciation Certificate — CLCC & Digital Bootcamp (AI Tutoring)
+Cybersecurity — Stellar Academy
+Python Intermediate, HTML — SoloLearn
+Object-Oriented Programming, GUI — Coursera
+
+Awards and Recognition
+
+
+
+
+
+
+
+🏆 Hackathon Winner — Remostart Hackathon (DevAssist Team) — October 2025
+🥈 Top 20 Finalist — Nigeria AI Digital Art Competition — 2025
+📜 Certificate of Appreciation — CLCC (AI Tutoring)
+💻 Laptop & Scholarship Award — Boycode 3.0 for Excellence in Tech
+🏅 "Tech Titan of Cohort 3.0" — Stellar Academy
+👨‍🏫 Recognized Mentor to Upcoming Tech Professionals
+
+Volunteer Experience
+
+
+
+
+
+Python Tutor at local community tech programs
+AI Education Contributor for youth initiatives
+Analytics Personnel — YPIT
+Publicity Team Member — GritinAI
+
+Portfolio & Publications
+ Personal Website: https://bit.ly/alaselababatunde
+ GitHub Portfolio: https://github.com/alaselababatunde/Portfolio
+
+Contact Information
+
+📞 Phone: 09154357208
+📧 Email: alaselababatunde10@gmail.com
+🔗 LinkedIn: Alasela Babatunde
+💬 Discord: @alasela_babatunde
+🐦 X (Twitter): @alasela_babs
+📲 Telegram: @alasela_babatunde
+🎥 TikTok: @alasela_babatunde
+🌐 Website: https://bit.ly/alaselababatunde
+💻 GitHub: https://github.com/alaselababatunde/Portfolio
+"Building AI solutions that are ethical, accessible, and impactful — proving that age is just a number when
+dedication meets innovation."
+
+

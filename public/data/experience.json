@@ -4,15 +4,48 @@
             "institution": "Stars College",
             "degree": "High School",
             "status": "Graduating 2026"
+        },
+        {
+            "institution": "Hugging Face",
+            "degree": "The LLM Course (1)",
+            "status": "Completed"
+        },
+        {
+            "institution": "Google / Coursera",
+            "degree": "Google AI Essentials",
+            "status": "Completed"
+        },
+        {
+            "institution": "Coursera",
+            "degree": "Rasa Chatbot Development",
+            "status": "Completed"
         }
     ],
-    "certifications": [
-        "The LLM Course (1) — Hugging Face",
-        "Rasa Chatbot Development — Coursera",
-        "Google AI Essentials — Coursera",
-        "Python Intermediate — SoloLearn",
-        "HTML — SoloLearn",
-        "Cybersecurity — Stellar Academy"
+    "work": [
+        {
+            "company": "Cura AI, Co.",
+            "role": "Founder & AI Engineer",
+            "period": "Nov 2024 – Present",
+            "description": "Leading development of emotionally intelligent AI virtual companions and RAG systems for mental health support."
+        },
+        {
+            "company": "Alash Studios",
+            "role": "Founder & Solution Architect",
+            "period": "Jan 2022 – Present",
+            "description": "Designing and deploying custom AI solutions, including customer support agents and agricultural optimization tools."
+        },
+        {
+            "company": "Solis Technologies",
+            "role": "Python & AI Instructor",
+            "period": "June 2023 – Oct 2024",
+            "description": "Trained individuals and teams on Python programming and AI integration strategies."
+        },
+        {
+            "company": "DevAssist Team",
+            "role": "Lead Developer (Hackathon)",
+            "period": "Oct 2025",
+            "description": "Won the Remostart Hackathon by building a comprehensive AI-powered developer assistance tool."
+        }
     ],
     "skills": {
         "languages": [

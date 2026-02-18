@@ -8,11 +8,45 @@ const Experience = ({ experience }) => {
       <h2 className="section-title">Qualifications & Expertise</h2>
 
       <div className="exp-grid">
-        <div className="skills-column">
+        <div className="work-column">
           <div className="glass-card glass">
             <div className="card-header">
+              <ShieldCheck className="icon" />
+              <h3>Professional Experience</h3>
+            </div>
+            <div className="work-timeline">
+              {experience.work.map((job, i) => (
+                <div key={i} className="work-item">
+                  <div className="work-meta">
+                    <h4>{job.role}</h4>
+                    <span className="period">{job.period}</span>
+                  </div>
+                  <h5 className="company">{job.company}</h5>
+                  <p className="description">{job.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="edu-skills-column">
+          <div className="glass-card glass">
+            <div className="card-header">
+              <GraduationCap className="icon" />
+              <h3>Education & Training</h3>
+            </div>
+            {experience.education.map((edu, i) => (
+              <div key={i} className="timeline-item">
+                <h4>{edu.degree}</h4>
+                <p>{edu.institution} • {edu.status}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="glass-card glass" style={{ marginTop: '2rem' }}>
+            <div className="card-header">
               <Cpu className="icon" />
-              <h3>Tech Stack</h3>
+              <h3>Technical Stack</h3>
             </div>
             <div className="skill-groups">
               <div className="skill-group">
@@ -30,30 +64,56 @@ const Experience = ({ experience }) => {
             </div>
           </div>
         </div>
-
-        <div className="timeline-column">
-          <div className="glass-card glass">
-            <div className="card-header">
-              <GraduationCap className="icon" />
-              <h3>Education</h3>
-            </div>
-            {experience.education.map((edu, i) => (
-              <div key={i} className="timeline-item">
-                <h4>{edu.institution}</h4>
-                <p>{edu.degree} • {edu.status}</p>
-              </div>
-            ))}
-          </div>
-
-        </div>
       </div>
 
       <style jsx>{`
         .exp-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 2.5rem;
           margin-top: 3rem;
+        }
+        .work-timeline {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .work-item {
+          position: relative;
+          padding-left: 2rem;
+          border-left: 2px solid var(--border-glass);
+          transition: var(--transition-smooth);
+        }
+        .work-item:hover {
+          border-left-color: var(--primary-green);
+        }
+        .work-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.5rem;
+        }
+        .work-meta h4 {
+          font-size: 1.1rem;
+          color: white;
+        }
+        .period {
+          font-size: 0.8rem;
+          color: var(--primary-green);
+          font-weight: 600;
+          background: rgba(34, 139, 34, 0.1);
+          padding: 0.2rem 0.6rem;
+          border-radius: 4px;
+        }
+        .company {
+          font-size: 0.95rem;
+          color: var(--primary-green);
+          margin-bottom: 0.75rem;
+        }
+        .description {
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          line-height: 1.5;
         }
         .glass-card {
           padding: 2.5rem;

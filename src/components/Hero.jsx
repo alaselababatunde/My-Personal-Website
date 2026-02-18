@@ -6,8 +6,8 @@ const Hero = ({ profile }) => {
   return (
     <section className="hero">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         className="hero-content"
       >
@@ -37,21 +37,64 @@ const Hero = ({ profile }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="cta-button"
+          onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
         >
           View Projects <ArrowRight size={18} />
         </motion.button>
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="hero-image-container"
+      >
+        <div className="image-frame glass">
+          <img src={profile.headshot} alt={profile.name} className="headshot" />
+          <div className="glow-border"></div>
+        </div>
+      </motion.div>
+
       <style jsx>{`
         .hero {
           min-height: 100vh;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
           align-items: center;
+          gap: 4rem;
           position: relative;
           padding-top: 80px;
         }
         .hero-content {
           max-width: 800px;
+        }
+        .hero-image-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .image-frame {
+          position: relative;
+          width: 320px;
+          height: 420px;
+          border-radius: 24px;
+          overflow: hidden;
+          padding: 0;
+        }
+        .headshot {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: contrast(1.1) brightness(1.05);
+        }
+        .glow-border {
+          position: absolute;
+          inset: 0;
+          border: 2px solid var(--primary-green);
+          border-radius: 24px;
+          opacity: 0.3;
+          pointer-events: none;
+          box-shadow: inset 0 0 20px var(--accent-glow);
         }
         .status-badge {
           display: inline-flex;
@@ -121,6 +164,31 @@ const Hero = ({ profile }) => {
         .cta-button:hover {
           background: var(--secondary-green);
           box-shadow: 0 0 20px var(--accent-glow);
+        }
+        @media (max-width: 968px) {
+          .hero {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding-top: 120px;
+          }
+          .hero-content, .hero-bio {
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .social-links {
+            justify-content: center;
+          }
+          .cta-button {
+            margin: 0 auto;
+          }
+          .hero-image-container {
+            order: -1;
+            margin-bottom: 2rem;
+          }
+          .image-frame {
+            width: 260px;
+            height: 320px;
+          }
         }
       `}</style>
     </section>
