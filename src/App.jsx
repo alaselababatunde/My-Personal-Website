@@ -52,7 +52,7 @@ function App() {
             <Hero profile={data.profile} />
             <About profile={data.profile} />
             <Projects projects={data.projects} />
-            <Services services={data.services} />
+            <Services services={data.services} payment={data.profile?.payment} />
             <Certificates certificates={data.certificates} />
             <Experience experience={data.experience} />
             <Contact profile={data.profile} />

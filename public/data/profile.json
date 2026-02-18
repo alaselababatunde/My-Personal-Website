@@ -16,7 +16,11 @@
   },
   "bio": "AI Engineer & Founder - CuraAi, Co | Building Emotionally Intelligent AI Systems | Hackathon Winner | AI-Python Pioneer",
   "vision": "Building AI solutions that are ethical, accessible, and impactful — proving that age is just a number when dedication meets innovation.",
-  "headshot": "/assets/headshot.jpg",
+  "payment": {
+    "bank": "Wema Bank",
+    "accountNumber": "62714298285",
+    "accountName": "Atinuke Babatunde Adetoun"
+  },
   "achievements": [
     "Hackathon Winner — Remostart Hackathon (DevAssist Team) — October 2025",
     "Top 20 Finalist — Nigeria AI Digital Art Competition — 2025",

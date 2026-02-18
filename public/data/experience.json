@@ -1,50 +1,115 @@
 {
-    "education": [
-        {
-            "institution": "Stars College",
-            "degree": "High School",
-            "status": "Graduating 2026"
-        },
-        {
-            "institution": "Hugging Face",
-            "degree": "The LLM Course (1)",
-            "status": "Completed"
-        },
-        {
-            "institution": "Google / Coursera",
-            "degree": "Google AI Essentials",
-            "status": "Completed"
-        },
-        {
-            "institution": "Coursera",
-            "degree": "Rasa Chatbot Development",
-            "status": "Completed"
-        }
-    ],
+    "education": {
+        "formal": [
+            {
+                "institution": "Stars College",
+                "degree": "High School Diploma",
+                "status": "Graduating 2026"
+            }
+        ],
+        "online": [
+            {
+                "platform": "Hugging Face",
+                "course": "The LLM Course (1)",
+                "status": "Completed"
+            },
+            {
+                "platform": "Google / Coursera",
+                "course": "Google AI Essentials",
+                "status": "Completed"
+            },
+            {
+                "platform": "Coursera",
+                "course": "Rasa Chatbot Development",
+                "status": "Completed"
+            },
+            {
+                "platform": "EdX",
+                "course": "Python Programming (Beginner), AI With Python",
+                "status": "Completed"
+            },
+            {
+                "platform": "Udemy",
+                "course": "AIML Programming",
+                "status": "Completed"
+            },
+            {
+                "platform": "SoloLearn",
+                "course": "Python Intermediate, HTML Intermediate, C++",
+                "status": "Completed"
+            },
+            {
+                "platform": "Stellar Academy",
+                "course": "Cybersecurity",
+                "status": "Completed"
+            }
+        ]
+    },
     "work": [
         {
             "company": "Cura AI, Co.",
             "role": "Founder & AI Engineer",
-            "period": "Nov 2024 – Present",
+            "period": "2025 – Present",
             "description": "Leading development of emotionally intelligent AI virtual companions and RAG systems for mental health support."
         },
         {
             "company": "Alash Studios",
             "role": "Founder & Solution Architect",
-            "period": "Jan 2022 – Present",
-            "description": "Designing and deploying custom AI solutions, including customer support agents and agricultural optimization tools."
+            "period": "2023 – Present",
+            "description": "Founded and lead a Tech Studio focused on AI innovation. Designing and deploying custom AI agents and optimization tools."
+        },
+        {
+            "company": "DevAssist Team",
+            "role": "Lead AI Engineer (Hackathon Winner)",
+            "period": "Oct 2025",
+            "description": "Won Remostart Hackathon by building an AI-powered IDE with code debugging and auto-documentation features."
+        },
+        {
+            "company": "Team Astra",
+            "role": "AI Engineer (FutureStack GenAI)",
+            "period": "2025",
+            "description": "Developed AI solutions for agricultural optimization and crop prediction during the FutureStack GenAI Hackathon."
+        },
+        {
+            "company": "Tech Disciples AI",
+            "role": "AI Developer",
+            "period": "2025",
+            "description": "Created custom AI assistants to support community engagement and information access for the Tech Disciples church community."
         },
         {
             "company": "Solis Technologies",
             "role": "Python & AI Instructor",
-            "period": "June 2023 – Oct 2024",
+            "period": "2023 – 2024",
             "description": "Trained individuals and teams on Python programming and AI integration strategies."
         },
         {
-            "company": "DevAssist Team",
-            "role": "Lead Developer (Hackathon)",
-            "period": "Oct 2025",
-            "description": "Won the Remostart Hackathon by building a comprehensive AI-powered developer assistance tool."
+            "company": "Luca Ador",
+            "role": "Project Supervisor",
+            "period": "Aug 2024 – Dec 2024",
+            "description": "Overseeing multiple technology projects, ensuring timely completion and technical quality across teams."
+        },
+        {
+            "company": "A.S.I.A Project",
+            "role": "Python Developer",
+            "period": "2023 – 2024",
+            "description": "Built a Python-based virtual assistant (A.S.I.A) using speech recognition, TTS, and real-time animations."
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "YPIT",
+            "role": "Analytics Personnel",
+            "period": "2024"
+        },
+        {
+            "organization": "GritinAI",
+            "role": "Publicity Team Member",
+            "period": "2024"
+        },
+        {
+            "organization": "Digital Bootcamp",
+            "role": "Python Tutor",
+            "period": "2024"
         }
     ],
     "skills": {

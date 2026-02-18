@@ -12,7 +12,7 @@ const Experience = ({ experience }) => {
           <div className="glass-card glass">
             <div className="card-header">
               <ShieldCheck className="icon" />
-              <h3>Professional Experience</h3>
+              <h3>Professional Journey</h3>
             </div>
             <div className="work-timeline">
               {experience.work.map((job, i) => (
@@ -26,6 +26,21 @@ const Experience = ({ experience }) => {
                 </div>
               ))}
             </div>
+
+            <div className="volunteer-section" style={{ marginTop: '3rem' }}>
+              <h4 className="sub-title">Volunteer & Contributions</h4>
+              <div className="volunteer-grid">
+                {experience.volunteer.map((v, i) => (
+                  <div key={i} className="work-item mini">
+                    <div className="work-meta">
+                      <h4>{v.role}</h4>
+                      <span className="period">{v.period}</span>
+                    </div>
+                    <h5 className="company">{v.organization}</h5>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -33,14 +48,25 @@ const Experience = ({ experience }) => {
           <div className="glass-card glass">
             <div className="card-header">
               <GraduationCap className="icon" />
-              <h3>Education & Training</h3>
+              <h3>Academic & Courses</h3>
             </div>
-            {experience.education.map((edu, i) => (
-              <div key={i} className="timeline-item">
-                <h4>{edu.degree}</h4>
-                <p>{edu.institution} • {edu.status}</p>
-              </div>
-            ))}
+            <div className="edu-list">
+              <h4 className="category-label">Formal Education</h4>
+              {experience.education.formal.map((edu, i) => (
+                <div key={i} className="timeline-item">
+                  <h4>{edu.degree}</h4>
+                  <p>{edu.institution} • {edu.status}</p>
+                </div>
+              ))}
+
+              <h4 className="category-label" style={{ marginTop: '2rem' }}>Training & Online Specializations</h4>
+              {experience.education.online.map((edu, i) => (
+                <div key={i} className="timeline-item small">
+                  <h4>{edu.course}</h4>
+                  <p>{edu.platform} • {edu.status}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="glass-card glass" style={{ marginTop: '2rem' }}>
@@ -117,6 +143,31 @@ const Experience = ({ experience }) => {
         }
         .glass-card {
           padding: 2.5rem;
+        }
+        .sub-title {
+          font-size: 1rem;
+          color: white;
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+        }
+        .volunteer-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .work-item.mini {
+          padding-left: 1.5rem;
+          border-left: 1px solid var(--border-glass);
+        }
+        .category-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          color: var(--primary-green);
+          margin-bottom: 1rem;
+          letter-spacing: 0.1em;
+        }
+        .timeline-item.small h4 {
+          font-size: 0.95rem;
         }
         .card-header {
           display: flex;

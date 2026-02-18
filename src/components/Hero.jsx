@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ArrowRight, Download } from 'lucide-react';
 
 const Hero = ({ profile }) => {
   return (
@@ -33,14 +33,26 @@ const Hero = ({ profile }) => {
           <a href={`mailto:${profile.email}`} className="glass glow-hover"><Mail size={20} /></a>
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="cta-button"
-          onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-        >
-          View Projects <ArrowRight size={18} />
-        </motion.button>
+        <div className="cta-group">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="cta-button"
+            onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+          >
+            View Projects <ArrowRight size={18} />
+          </motion.button>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="cta-button secondary"
+            href="/assets/resume.pdf"
+            download="Alasela_Babatunde_Resume.pdf"
+          >
+            Download Resume <Download size={18} />
+          </motion.a>
+        </div>
       </motion.div>
 
       <motion.div
@@ -147,6 +159,10 @@ const Hero = ({ profile }) => {
           align-items: center;
           justify-content: center;
         }
+        .cta-group {
+          display: flex;
+          gap: 1.5rem;
+        }
         .cta-button {
           background: var(--primary-green);
           color: white;
@@ -161,9 +177,20 @@ const Hero = ({ profile }) => {
           cursor: pointer;
           transition: var(--transition-smooth);
         }
+        .cta-button.secondary {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--border-glass);
+          color: var(--text-secondary);
+        }
         .cta-button:hover {
           background: var(--secondary-green);
+          color: white;
           box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .cta-button.secondary:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--primary-green);
+          color: var(--primary-green);
         }
         @media (max-width: 968px) {
           .hero {
@@ -178,8 +205,14 @@ const Hero = ({ profile }) => {
           .social-links {
             justify-content: center;
           }
+          .cta-group {
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+          }
           .cta-button {
             margin: 0 auto;
+            width: fit-content;
           }
           .hero-image-container {
             order: -1;
