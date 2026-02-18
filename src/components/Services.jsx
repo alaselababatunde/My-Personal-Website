@@ -101,7 +101,7 @@ const Services = ({ services, payment }) => {
                   </div>
                 </div>
 
-                <p className="note">Once paid, please send a screenshot of the receipt via the Contact section or Email to finalize the deployment.</p>
+                <p className="note">Once paid, please send a <strong>screenshot of the receipt</strong> and a <strong>description of the AI</strong> to be developed via the Contact section, Email, or Phone to finalize the deployment.</p>
               </div>
 
               <button

@@ -1,57 +1,104 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = ({ profile }) => {
-    return (
-        <section id="contact" className="contact-section">
-            <div className="contact-container glass">
-                <div className="contact-info">
-                    <h2>Let's Build the Future</h2>
-                    <p>Have a project in mind or want to collaborate on the next AI breakthrough? Get in touch.</p>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-                    <div className="info-items">
-                        <div className="info-item">
-                            <Mail className="icon" />
-                            <div>
-                                <span>Email</span>
-                                <p>{profile.email}</p>
-                            </div>
-                        </div>
-                        <div className="info-item">
-                            <Phone className="icon" />
-                            <div>
-                                <span>Phone</span>
-                                <p>{profile.phone}</p>
-                            </div>
-                        </div>
-                        <div className="info-item">
-                            <MapPin className="icon" />
-                            <div>
-                                <span>Location</span>
-                                <p>{profile.location}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:${profile.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
+    alert('Transmission initiated via your local mail client.');
+  };
 
-                <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                    <div className="input-group">
-                        <input type="text" placeholder="Full Name" />
-                        <input type="email" placeholder="Email Address" />
-                    </div>
-                    <input type="text" placeholder="Subject" />
-                    <textarea placeholder="Your Message" rows="5"></textarea>
-                    <button className="submit-btn glow-hover">
-                        Send Transmission <Send size={18} />
-                    </button>
-                </form>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  return (
+    <section id="contact" className="contact-section">
+      <div className="contact-container glass">
+        <div className="contact-info">
+          <h2>Let's Build the Future</h2>
+          <p>Have a project in mind or want to collaborate on the next AI breakthrough? Get in touch.</p>
+
+          <div className="info-items">
+            <div className="info-item">
+              <Mail className="icon" />
+              <div>
+                <span>Email</span>
+                <p>{profile.email}</p>
+              </div>
             </div>
+            <div className="info-item">
+              <Phone className="icon" />
+              <div>
+                <span>Phone</span>
+                <p>{profile.phone}</p>
+              </div>
+            </div>
+            <div className="info-item">
+              <MapPin className="icon" />
+              <div>
+                <span>Location</span>
+                <p>{profile.location}</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <footer className="footer">
-                <p>&copy; {new Date().getFullYear()} {profile.name}. All systems operational.</p>
-            </footer>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              name="name"
+              type="text"
+              placeholder="Full Name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <input
+            name="subject"
+            type="text"
+            placeholder="Subject"
+            required
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message (Include AI Description if applicable)"
+            rows="5"
+            required
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+          <button type="submit" className="submit-btn glow-hover">
+            Send Transmission <Send size={18} />
+          </button>
+        </form>
+      </div>
 
-            <style jsx>{`
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} {profile.name}. All systems operational.</p>
+      </footer>
+
+      <style jsx>{`
         .contact-container {
           padding: 4rem;
           display: grid;
@@ -148,8 +195,8 @@ const Contact = ({ profile }) => {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Contact;
