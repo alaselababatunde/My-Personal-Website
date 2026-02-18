@@ -1,153 +1,163 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { motion } from 'framer-motion'; // Added framer-motion import
+import { motion } from 'framer-motion';
 
 const Contact = ({ profile }) => {
-  const [status, setStatus] = useState('idle'); // idle, sending, success, error
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+    const [status, setStatus] = useState('idle'); // idle, sending, success, error
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('sending');
 
-    try {
-      // Using your email directly as the Formspree endpoint
-      const response = await fetch(`https://formspree.io/f/alaselababatunde10@gmail.com`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _subject: `New AI Project Transmission: ${formData.subject}`
-        })
-      });
+        try {
+            // Using your email directly as the Formspree endpoint. 
+            // Note: For reliable AJAX submission without redirects, you should ideally create 
+            // a form ID on formspree.io and use "https://formspree.io/f/YOUR_ID_HERE"
+            const response = await fetch(`https://formspree.io/alaselababatunde10@gmail.com`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    _subject: `New AI Project Transmission: ${formData.subject}`
+                })
+            });
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      console.error("Submission Error:", error);
-      setStatus('error');
-    }
-  };
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Submission Error:", error);
+            setStatus('error');
+        }
+    };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
-  return (
-    <section id="contact" className="contact-section">
-      <div className="contact-container glass">
-        <div className="contact-info">
-          <h2>Let's Build the Future</h2>
-          <p>Have a project in mind or want to collaborate on the next AI breakthrough? Get in touch.</p>
+    return (
+        <section id="contact" className="contact-section">
+            <div className="contact-container glass">
+                <div className="contact-info">
+                    <h2>Let's Build the Future</h2>
+                    <p>Have a project in mind or want to collaborate on the next AI breakthrough? Get in touch.</p>
 
-          <div className="info-items">
-            <div className="info-item">
-              <Mail className="icon" />
-              <div>
-                <span>Email</span>
-                <p>{profile.email}</p>
-              </div>
+                    <div className="info-items">
+                        <div className="info-item">
+                            <Mail className="icon" />
+                            <div>
+                                <span>Email</span>
+                                <p>{profile.email}</p>
+                            </div>
+                        </div>
+                        <div className="info-item">
+                            <Phone className="icon" />
+                            <div>
+                                <span>Phone</span>
+                                <p>{profile.phone}</p>
+                            </div>
+                        </div>
+                        <div className="info-item">
+                            <MapPin className="icon" />
+                            <div>
+                                <span>Location</span>
+                                <p>{profile.location}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="form-wrapper">
+                    {status === 'success' ? (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="success-message glass"
+                        >
+                            <div className="success-icon">✓</div>
+                            <h3>Transmission Complete</h3>
+                            <p>Your message has been encoded and sent through the uplink. I'll get back to you shortly.</p>
+                            <button onClick={() => setStatus('idle')} className="submit-btn secondary">Send Another</button>
+                        </motion.div>
+                    ) : (
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            <div className="input-group">
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder="Full Name"
+                                    required
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    disabled={status === 'sending'}
+                                />
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email Address"
+                                    required
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    disabled={status === 'sending'}
+                                />
+                            </div>
+                            <input
+                                name="subject"
+                                type="text"
+                                placeholder="Subject"
+                                required
+                                value={formData.subject}
+                                onChange={handleChange}
+                                disabled={status === 'sending'}
+                            />
+                            <textarea
+                                name="message"
+                                placeholder="Your Message (Include AI Description if applicable)"
+                                rows="5"
+                                required
+                                value={formData.message}
+                                onChange={handleChange}
+                                disabled={status === 'sending'}
+                            ></textarea>
+                            <button type="submit" className="submit-btn glow-hover" disabled={status === 'sending'}>
+                                {status === 'sending' ? (
+                                    <span className="loading-dots">Initializing Uplink</span>
+                                ) : (
+                                    <>Send Transmission <Send size={18} /></>
+                                )}
+                            </button>
+                            {status === 'error' && (
+                                <div className="error-box">
+                                    <p className="error-text">Uplink failed. This is usually because Formspree needs you to activate the endpoint.</p>
+                                    <p className="error-tip">Tip: Check your Gmail (alaselababatunde10@gmail.com) for an activation link from Formspree. Once clicked, this form will work perfectly.</p>
+                                </div>
+                            )}
+                        </form>
+                    )}
+                </div>
             </div>
-            <div className="info-item">
-              <Phone className="icon" />
-              <div>
-                <span>Phone</span>
-                <p>{profile.phone}</p>
-              </div>
-            </div>
-            <div className="info-item">
-              <MapPin className="icon" />
-              <div>
-                <span>Location</span>
-                <p>{profile.location}</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="form-wrapper">
-          {status === 'success' ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="success-message glass"
-            >
-              <div className="success-icon">✓</div>
-              <h3>Transmission Complete</h3>
-              <p>Your message has been encoded and sent through the uplink. I'll get back to you shortly.</p>
-              <button onClick={() => setStatus('idle')} className="submit-btn secondary">Send Another</button>
-            </motion.div>
-          ) : (
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="input-group">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  disabled={status === 'sending'}
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email Address"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  disabled={status === 'sending'}
-                />
-              </div>
-              <input
-                name="subject"
-                type="text"
-                placeholder="Subject"
-                required
-                value={formData.subject}
-                onChange={handleChange}
-                disabled={status === 'sending'}
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message (Include AI Description if applicable)"
-                rows="5"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                disabled={status === 'sending'}
-              ></textarea>
-              <button type="submit" className="submit-btn glow-hover" disabled={status === 'sending'}>
-                {status === 'sending' ? (
-                  <span className="loading-dots">Initializing Uplink</span>
-                ) : (
-                  <>Send Transmission <Send size={18} /></>
-                )}
-              </button>
-              {status === 'error' && <p className="error-text">Uplink failed. Please check your connection or try again.</p>}
-            </form>
-          )}
-        </div>
-      </div>
+            <footer className="footer">
+                <p>&copy; {new Date().getFullYear()} {profile.name}. All systems operational.</p>
+            </footer>
 
-      <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} {profile.name}. All systems operational.</p>
-      </footer>
-
-      <style jsx>{`
+            <style jsx>{`
         .contact-container {
           padding: 4rem;
           display: grid;
@@ -182,10 +192,23 @@ const Contact = ({ profile }) => {
           font-size: 2rem;
           box-shadow: 0 0 20px var(--accent-glow);
         }
+        .error-box {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 77, 77, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 77, 77, 0.2);
+        }
         .error-text {
             color: #ff4d4d;
             font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+        .error-tip {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
             text-align: center;
         }
         .contact-info h2 {
@@ -287,8 +310,8 @@ const Contact = ({ profile }) => {
           }
         }
       `}</style>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Contact;
