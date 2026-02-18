@@ -34,5 +34,17 @@
             "Custom system integrations",
             "Workflow optimization"
         ]
+    },
+    {
+        "title": "Custom Grade AI",
+        "description": "Specialized solutions for unique requirements, including custom model training and niche domain expertise.",
+        "initialPrice": "Varies",
+        "renewalPrice": "Custom Quote",
+        "features": [
+            "Custom model fine-tuning",
+            "Niche domain adaptation",
+            "End-to-end bespoke development",
+            "Scalable elite performance"
+        ]
     }
 ]
