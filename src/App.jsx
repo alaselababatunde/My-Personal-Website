@@ -44,18 +44,22 @@ function App() {
         loadContent();
     }, []);
 
-    if (!data.profile) return <div className="loading">Initializing AI environment...</div>;
-
     return (
         <div className="portfolio-app">
             <NavBar />
-            <Hero profile={data.profile} />
-            <About profile={data.profile} />
-            <Projects projects={data.projects} />
-            <Services services={data.services} payment={data.profile?.payment} />
-            <Certificates certificates={data.certificates} />
+            {data.profile ? (
+                <>
+                    <Hero profile={data.profile} />
+                    <About profile={data.profile} />
+                </>
+            ) : <div className="section-skeleton" style={{ height: '80vh' }}></div>}
+
+            {data.projects.length > 0 && <Projects projects={data.projects} />}
+            {data.services.length > 0 && <Services services={data.services} payment={data.profile?.payment} />}
+            {data.certificates.length > 0 && <Certificates certificates={data.certificates} />}
             <Experience experience={data.experience} />
-            <Contact profile={data.profile} />
+
+            {data.profile && <Contact profile={data.profile} />}
         </div>
     );
 }

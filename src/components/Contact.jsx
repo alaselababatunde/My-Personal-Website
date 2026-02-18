@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { motion } from 'framer-motion'; // Added framer-motion import
 
 const Contact = ({ profile }) => {
+  const [status, setStatus] = useState('idle'); // idle, sending, success, error
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,11 +11,34 @@ const Contact = ({ profile }) => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${profile.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    window.location.href = mailtoLink;
-    alert('Transmission initiated via your local mail client.');
+    setStatus('sending');
+
+    try {
+      // Using your email directly as the Formspree endpoint
+      const response = await fetch(`https://formspree.io/f/alaselababatunde10@gmail.com`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `New AI Project Transmission: ${formData.subject}`
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      setStatus('error');
+    }
   };
 
   const handleChange = (e) => {
@@ -53,45 +78,69 @@ const Contact = ({ profile }) => {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <input
-              name="name"
-              type="text"
-              placeholder="Full Name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              required
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <input
-            name="subject"
-            type="text"
-            placeholder="Subject"
-            required
-            value={formData.subject}
-            onChange={handleChange}
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message (Include AI Description if applicable)"
-            rows="5"
-            required
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
-          <button type="submit" className="submit-btn glow-hover">
-            Send Transmission <Send size={18} />
-          </button>
-        </form>
+        <div className="form-wrapper">
+          {status === 'success' ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="success-message glass"
+            >
+              <div className="success-icon">✓</div>
+              <h3>Transmission Complete</h3>
+              <p>Your message has been encoded and sent through the uplink. I'll get back to you shortly.</p>
+              <button onClick={() => setStatus('idle')} className="submit-btn secondary">Send Another</button>
+            </motion.div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Full Name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  disabled={status === 'sending'}
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email Address"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  disabled={status === 'sending'}
+                />
+              </div>
+              <input
+                name="subject"
+                type="text"
+                placeholder="Subject"
+                required
+                value={formData.subject}
+                onChange={handleChange}
+                disabled={status === 'sending'}
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message (Include AI Description if applicable)"
+                rows="5"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                disabled={status === 'sending'}
+              ></textarea>
+              <button type="submit" className="submit-btn glow-hover" disabled={status === 'sending'}>
+                {status === 'sending' ? (
+                  <span className="loading-dots">Initializing Uplink</span>
+                ) : (
+                  <>Send Transmission <Send size={18} /></>
+                )}
+              </button>
+              {status === 'error' && <p className="error-text">Uplink failed. Please check your connection or try again.</p>}
+            </form>
+          )}
+        </div>
       </div>
 
       <footer className="footer">
@@ -104,6 +153,40 @@ const Contact = ({ profile }) => {
           display: grid;
           grid-template-columns: 1fr 1.5fr;
           gap: 4rem;
+          position: relative;
+        }
+        .form-wrapper {
+          position: relative;
+          min-height: 400px;
+          display: flex;
+          flex-direction: column;
+        }
+        .success-message {
+          text-align: center;
+          padding: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+          height: 100%;
+          justify-content: center;
+        }
+        .success-icon {
+          width: 60px;
+          height: 60px;
+          background: var(--primary-green);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .error-text {
+            color: #ff4d4d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
         }
         .contact-info h2 {
           font-size: 2.5rem;
@@ -175,6 +258,15 @@ const Contact = ({ profile }) => {
           gap: 0.75rem;
           cursor: pointer;
           transition: var(--transition-smooth);
+        }
+        .submit-btn.secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-glass);
+            margin-top: 1rem;
+        }
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
         .footer {

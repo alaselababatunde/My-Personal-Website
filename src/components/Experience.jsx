@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Award, Cpu, ShieldCheck } from 'lucide-react';
 
 const Experience = ({ experience }) => {
+  if (!experience) return <div className="section-skeleton" style={{ height: '60vh' }}></div>;
+
   return (
     <section id="experience" className="experience-section">
       <h2 className="section-title">Qualifications & Expertise</h2>
