@@ -3,51 +3,52 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react';
 
 const Hero = ({ profile }) => {
-    return (
-        <section className="hero">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="hero-content"
-            >
-                <div className="status-badge glass">
-                    <span className="pulse"></span>
-                    System Online: {profile.title}
-                </div>
+  return (
+    <section className="hero">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="hero-content"
+      >
+        <div className="status-badge glass">
+          <span className="pulse"></span>
+          System Online: {profile.title}
+        </div>
 
-                <h1 className="hero-name">
-                    {profile.name.split(' ').map((word, i) => (
-                        <span key={i} className={i === 1 ? 'accent' : ''}>{word} </span>
-                    ))}
-                </h1>
+        <h1 className="hero-name">
+          {profile.name.split(' ').map((word, i) => (
+            <span key={i} className={i === 1 ? 'accent' : ''}>{word} </span>
+          ))}
+        </h1>
 
-                <p className="hero-bio">
-                    {profile.bio}
-                </p>
+        <p className="hero-bio">
+          {profile.bio}
+        </p>
 
-                <div className="social-links">
-                    <a href={profile.socials.github} target="_blank" rel="noreferrer" className="glass glow-hover"><Github size={20} /></a>
-                    <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="glass glow-hover"><Linkedin size={20} /></a>
-                    <a href={profile.socials.twitter} target="_blank" rel="noreferrer" className="glass glow-hover"><Twitter size={20} /></a>
-                    <a href={`mailto:${profile.email}`} className="glass glow-hover"><Mail size={20} /></a>
-                </div>
+        <div className="social-links">
+          <a href={profile.socials.github} target="_blank" rel="noreferrer" className="glass glow-hover"><Github size={20} /></a>
+          <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="glass glow-hover"><Linkedin size={20} /></a>
+          <a href={profile.socials.twitter} target="_blank" rel="noreferrer" className="glass glow-hover"><Twitter size={20} /></a>
+          <a href={`mailto:${profile.email}`} className="glass glow-hover"><Mail size={20} /></a>
+        </div>
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="cta-button"
-                >
-                    View Projects <ArrowRight size={18} />
-                </motion.button>
-            </motion.div>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="cta-button"
+        >
+          View Projects <ArrowRight size={18} />
+        </motion.button>
+      </motion.div>
 
-            <style jsx>{`
+      <style jsx>{`
         .hero {
-          height: 90vh;
+          min-height: 100vh;
           display: flex;
           align-items: center;
           position: relative;
+          padding-top: 80px;
         }
         .hero-content {
           max-width: 800px;
@@ -122,8 +123,8 @@ const Hero = ({ profile }) => {
           box-shadow: 0 0 20px var(--accent-glow);
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Hero;
