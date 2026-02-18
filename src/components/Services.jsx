@@ -233,8 +233,19 @@ const Services = ({ services, payment }) => {
         .checkout-modal {
             max-width: 500px;
             width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
             padding: 3rem;
             position: relative;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-green) transparent;
+        }
+        .checkout-modal::-webkit-scrollbar {
+            width: 6px;
+        }
+        .checkout-modal::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 10px;
         }
         .close-btn {
             position: absolute;
