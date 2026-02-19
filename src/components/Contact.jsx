@@ -17,8 +17,9 @@ const Contact = ({ profile }) => {
 
         try {
             // Using your email directly as the Formspree endpoint. 
-            // Note: For reliable AJAX submission without redirects, you should ideally create 
-            // a form ID on formspree.io and use "https://formspree.io/f/YOUR_ID_HERE"
+            // IMPORTANT: Since you just registered, you MUST check your email and click the "Activate" button.
+            // TIP: For a smoother experience, create a Form ID on formspree.io and use:
+            // https://formspree.io/f/YOUR_FORM_ID
             const response = await fetch(`https://formspree.io/alaselababatunde10@gmail.com`, {
                 method: 'POST',
                 headers: {
@@ -144,8 +145,11 @@ const Contact = ({ profile }) => {
                             </button>
                             {status === 'error' && (
                                 <div className="error-box">
-                                    <p className="error-text">Uplink failed. This is usually because Formspree needs you to activate the endpoint.</p>
-                                    <p className="error-tip">Tip: Check your Gmail (alaselababatunde10@gmail.com) for an activation link from Formspree. Once clicked, this form will work perfectly.</p>
+                                    <p className="error-text">Uplink failed. Endpoint activation required.</p>
+                                    <p className="error-tip">
+                                        Formspree has sent an activation link to <strong>alaselababatunde10@gmail.com</strong>. <br /><br />
+                                        Please <strong>open your inbox and click the 'Activate' button</strong> to enable this service. Once activated, your messages will be delivered instantly.
+                                    </p>
                                 </div>
                             )}
                         </form>

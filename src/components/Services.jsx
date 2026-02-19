@@ -69,9 +69,13 @@ const Services = ({ services, payment }) => {
               </button>
 
               <div className="modal-header">
-                <CreditCard className="icon" size={32} />
+                <div className="header-icon-wrapper">
+                  <CreditCard className="icon" size={32} />
+                </div>
                 <h3>Secure Checkout</h3>
-                <p>You are requesting: <strong>{selectedService.title}</strong></p>
+                <div className="requesting-line">
+                  You are requesting: <span>{selectedService.title}</span>
+                </div>
               </div>
 
               <div className="payment-instructions">
@@ -258,16 +262,51 @@ const Services = ({ services, payment }) => {
         }
         .modal-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-icon-wrapper {
+            background: rgba(34, 139, 34, 0.1);
+            padding: 1rem;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .modal-header .icon {
             color: var(--primary-green);
-            margin-bottom: 1rem;
         }
         .modal-header h3 {
             font-size: 1.75rem;
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        .requesting-line {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .requesting-line span {
+            color: var(--primary-green);
+            font-weight: 700;
+            display: block;
+            margin-top: 0.2rem;
+        }
+        @media (max-width: 480px) {
+            .modal-header h3 {
+                font-size: 1.4rem;
+            }
+            .requesting-line {
+                font-size: 0.9rem;
+            }
+            .checkout-modal {
+                padding: 2rem 1.5rem;
+            }
         }
         .payment-instructions p {
             font-size: 0.95rem;
