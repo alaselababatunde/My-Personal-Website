@@ -21,5 +21,17 @@
       "E-commerce"
     ],
     "icon": "🏆"
+  },
+  {
+    "title": "DSTV AI Support",
+    "description": "A specialized AI customer support system for DStv, leveraging RAG technology to provide instant, accurate assistance for service inquiries.",
+    "demo": "https://alaselababatunde-dstv-ai-support.hf.space/",
+    "tags": [
+      "AI",
+      "RAG",
+      "Customer Support",
+      "Entertainment"
+    ],
+    "icon": "📡"
   }
 ]
