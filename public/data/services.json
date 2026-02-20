@@ -1,5 +1,17 @@
 [
     {
+        "title": "Static Website",
+        "description": "High-performance, SEO-optimized static websites tailored for speed, security, and modern aesthetics.",
+        "initialPrice": "₦900,000",
+        "renewalPrice": "₦450,000",
+        "features": [
+            "Full SEO optimization",
+            "Fast loading speeds",
+            "Modern and responsive design",
+            "Secure hosting setup"
+        ]
+    },
+    {
         "title": "Standard Chatbot Solution",
         "description": "Designed for small companies requiring occasional chatbot functionality with moderate usage patterns.",
         "initialPrice": "₦1,428,000",
