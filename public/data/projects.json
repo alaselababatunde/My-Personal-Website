@@ -33,5 +33,16 @@
       "Entertainment"
     ],
     "icon": "📡"
+  },
+  {
+    "title": "Domino's Pizza AI Support",
+    "description": "Intelligent customer support AI system for Domino's Pizza, providing instant help for ordering and inquiries.",
+    "demo": "https://alaselababatunde-dominos-pizza-ai-support.hf.space/",
+    "tags": [
+      "AI",
+      "RAG",
+      "Food Tech"
+    ],
+    "icon": "🍕"
   }
 ]
