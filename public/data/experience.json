@@ -78,15 +78,9 @@
         },
         {
             "company": "CLCC Digital Bootcamp",
-            "role": "Python & Prompt Engineering Instructor",
+            "role": "Python & Prompt Engineering Tutor",
             "period": "2025",
-            "description": "Trained individuals on Python programming and prompt engineering techniques."
-        },
-        {
-            "company": "American Corner",
-            "role": "Python & AI Instructor",
-            "period": "2023 – 2024",
-            "description": "Trained individuals and teams on Python programming and AI integration strategies."
+            "description": "Trained individuals on Python programming and prompt engineering."
         },
         {
             "company": "Luca Ador",
@@ -113,9 +107,15 @@
             "period": "2024"
         },
         {
-            "organization": "Digital Bootcamp",
-            "role": "Python Tutor",
+            "organization": "CLCC Digital Bootcamp",
+            "role": "Python & Prompt Engineering Tutor",
             "period": "2024"
+        },
+        {
+            "organization": "American Corner",
+            "role": "Python & AI Instructor",
+            "period": "2023 – 2024",
+            "description": "Trained individuals and teams on Python programming and AI integration strategies."
         }
     ],
     "skills": {
