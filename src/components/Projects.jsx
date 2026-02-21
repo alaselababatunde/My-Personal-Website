@@ -3,73 +3,73 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Code, Layout, X } from 'lucide-react';
 
 const Projects = ({ projects }) => {
-    const [selectedDemo, setSelectedDemo] = useState(null);
+  const [selectedDemo, setSelectedDemo] = useState(null);
 
-    return (
-        <section id="projects" className="projects-section">
-            <h2 className="section-title">AI Projects Showcase</h2>
+  return (
+    <section id="projects" className="projects-section">
+      <h2 className="section-title">AI Projects Showcase</h2>
 
-            <div className="projects-grid">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="project-card glass glow-hover"
-                    >
-                        <div className="project-icon">{project.icon}</div>
-                        <h3 className="project-title">{project.title}</h3>
-                        <p className="project-desc">{project.description}</p>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="project-card glass glow-hover"
+          >
+            <div className="project-icon">{project.icon}</div>
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-desc">{project.description}</p>
 
-                        <div className="project-tags">
-                            {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-                        </div>
-
-                        <div className="project-actions">
-                            {project.demo ? (
-                                <button
-                                    onClick={() => setSelectedDemo(project.demo)}
-                                    className="action-link primary"
-                                >
-                                    <Layout size={16} /> Live Demo
-                                </button>
-                            ) : (
-                                <span className="action-link disabled">Production Grade</span>
-                            )}
-                        </div>
-                    </motion.div>
-                ))}
+            <div className="project-tags">
+              {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
             </div>
 
-            {/* Demo Modal */}
-            <AnimatePresence>
-                {selectedDemo && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="demo-modal-overlay"
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="demo-modal glass"
-                        >
-                            <div className="modal-header">
-                                <h3>Interactive Demo</h3>
-                                <button onClick={() => setSelectedDemo(null)}><X /></button>
-                            </div>
-                            <div className="modal-body">
-                                <iframe src={selectedDemo} title="AI Demo" />
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <div className="project-actions">
+              {project.demo ? (
+                <button
+                  onClick={() => setSelectedDemo(project.demo)}
+                  className="action-link primary"
+                >
+                  <Layout size={16} /> Live Demo
+                </button>
+              ) : (
+                <span className="action-link disabled">Production Grade</span>
+              )}
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
-            <style jsx>{`
+      {/* Demo Modal */}
+      <AnimatePresence>
+        {selectedDemo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="demo-modal-overlay"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="demo-modal glass"
+            >
+              <div className="modal-header">
+                <h3>Interactive Demo</h3>
+                <button onClick={() => setSelectedDemo(null)}><X /></button>
+              </div>
+              <div className={`modal-body ${selectedDemo?.includes('dstv') ? 'dstv-demo' : ''}`}>
+                <iframe src={selectedDemo} title="AI Demo" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
         .projects-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -144,7 +144,7 @@ const Projects = ({ projects }) => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(0,0,0,0.8);
+          background: rgba(0,0,0,0.85);
           backdrop-filter: blur(8px);
           display: flex;
           align-items: center;
@@ -154,37 +154,73 @@ const Projects = ({ projects }) => {
         }
         .demo-modal {
           width: 100%;
-          max-width: 1200px;
+          max-width: 1000px;
           height: 85vh;
           display: flex;
           flex-direction: column;
           overflow: hidden;
+          border: 1px solid var(--border-glass);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         .modal-header {
-          padding: 1rem 2rem;
+          padding: 0.75rem 1.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           border-bottom: 1px solid var(--border-glass);
+          background: rgba(20, 20, 20, 0.8);
+        }
+        .modal-header h3 {
+          font-size: 1.1rem;
+          font-weight: 600;
         }
         .modal-header button {
           background: none;
           border: none;
           color: white;
           cursor: pointer;
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          transition: transform 0.2s;
+        }
+        .modal-header button:hover {
+          transform: scale(1.1);
         }
         .modal-body {
           flex-grow: 1;
+          position: relative;
+          background: #f8f9fa;
+          overflow: hidden;
         }
         .modal-body iframe {
           width: 100%;
           height: 100%;
           border: none;
-          background: white;
+        }
+
+        /* Mobile specific adjustments to make it "fitted" */
+        @media (max-width: 768px) {
+          .demo-modal-overlay {
+            padding: 1rem;
+          }
+          .demo-modal {
+            height: 90vh;
+            border-radius: 12px;
+          }
+          .modal-header {
+            padding: 0.5rem 1rem;
+          }
+          
+          /* Special fitting for DStv demo which might have different container requirements */
+          .dstv-demo iframe {
+            /* Force a slightly taller viewport feel on mobile if needed */
+            height: 100%;
+          }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Projects;
