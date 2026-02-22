@@ -29,7 +29,13 @@ const Projects = ({ projects }) => {
             <div className="project-actions">
               {project.demo ? (
                 <button
-                  onClick={() => setSelectedDemo(project.demo)}
+                  onClick={() => {
+                    if (project.external) {
+                      window.open(project.demo, '_blank', 'noopener,noreferrer');
+                    } else {
+                      setSelectedDemo(project.demo);
+                    }
+                  }}
                   className="action-link primary"
                 >
                   <Layout size={16} /> Live Demo

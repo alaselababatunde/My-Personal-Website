@@ -56,5 +56,18 @@
       "Theology"
     ],
     "icon": "🙏"
+  },
+  {
+    "title": "Echo Microfinance Bank",
+    "description": "A premium, modernized static website for Echo Microfinance Bank Limited featuring luxury design and smooth scroll animations.",
+    "demo": "https://echo-microfinance-bank-limited-404.vercel.app/",
+    "tags": [
+      "Vanilla JS",
+      "UI/UX",
+      "Frontend",
+      "Banking"
+    ],
+    "icon": "🏦",
+    "external": true
   }
 ]
