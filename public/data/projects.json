@@ -44,5 +44,17 @@
       "Food Tech"
     ],
     "icon": "🍕"
+  },
+  {
+    "title": "Theo AI",
+    "description": "A modern Christian AI assistant designed to provide scriptural guidance, spiritual support, and biblical insights through an intelligent RAG-powered interface.",
+    "demo": "https://techdisciples1-theo.hf.space/",
+    "tags": [
+      "AI",
+      "RAG",
+      "Christian",
+      "Theology"
+    ],
+    "icon": "🙏"
   }
 ]
