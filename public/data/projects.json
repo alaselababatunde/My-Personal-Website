@@ -82,5 +82,18 @@
     ],
     "icon": "🏢",
     "external": true
+  },
+  {
+    "title": "Sales Yards Nigeria",
+    "description": "A premium, modernized static website for Sales Yards Nigeria.",
+    "demo": "https://sales-yards-nigeria.vercel.app/",
+    "tags": [
+      "Vanilla JS",
+      "UI/UX",
+      "Frontend",
+      "Business"
+    ],
+    "icon": "🌐",
+    "external": true
   }
 ]
