@@ -69,5 +69,18 @@
     ],
     "icon": "🏦",
     "external": true
+  },
+  {
+    "title": "Romax Properties",
+    "description": "A premium static website for Romax Properties Limited, a premier real estate developer in Nigeria.",
+    "demo": "https://romax-properties.vercel.app/",
+    "tags": [
+      "Vanilla JS",
+      "UI/UX",
+      "Frontend",
+      "Real Estate"
+    ],
+    "icon": "🏢",
+    "external": true
   }
 ]
